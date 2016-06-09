@@ -12,7 +12,7 @@ namespace Wend\Modules;
 * @author Kamran Ahmed <kamranahmed.se@gmail.com>
 * @package App\Modules
 */
-class ServiceProvider extends \Illuminate\Support\ServiceProvider
+class ModulesServiceProvider extends \Illuminate\Support\ServiceProvider
 {
     /**
      * Will make sure that the required modules have been fully loaded
@@ -21,7 +21,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
     public function boot()
     {
         // For each of the registered modules, include their routes and Views
-        $modules = config("module.modules");
+        $modules = config("modules.enabled");
 
         while (list(,$module) = each($modules)) {
 
