@@ -10,9 +10,9 @@ namespace Wend\Modules;
 * i.e. with their routes, views etc.
 *
 * @author Kamran Ahmed <kamranahmed.se@gmail.com>
-* @package App\Modules
+* @package Wend\Modules
 */
-class ModulesServiceProvider extends \Illuminate\Support\ServiceProvider
+class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
     /**
      * Will make sure that the required modules have been fully loaded
@@ -26,8 +26,8 @@ class ModulesServiceProvider extends \Illuminate\Support\ServiceProvider
         while (list(,$module) = each($modules)) {
 
             // Load the routes for each of the modules
-            if(file_exists(__DIR__.'/'.$module.'/Http/routes.php')) {
-                include __DIR__.'/'.$module.'/Http/routes.php';
+            if(file_exists(__DIR__.'/'.$module.'/routes.php')) {
+                include __DIR__.'/'.$module.'/routes.php';
             }
 
             // Load the views
