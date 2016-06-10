@@ -21,7 +21,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
     public function boot()
     {
         // For each of the registered modules, include their routes and Views
-        $modules = config("modules.enabled");
+        $modules = config("module.modules");
 
         while (list(,$module) = each($modules)) {
 
